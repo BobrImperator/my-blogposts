@@ -12,7 +12,7 @@ export default class ApplicationController extends Controller {
   receiveTodos = (todos) => {
     this.todos = todos;
 
-    // Fake event
-    this['todos-change']?.(todos);
+    // Calling callback of a fake event handler.
+    this.config.onTodosChanged?.(todos);
   }
 }

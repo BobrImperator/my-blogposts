@@ -2,16 +2,16 @@
 
 const EmberApp = require("ember-cli/lib/broccoli/ember-app");
 const { Webpack } = require("@embroider/webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const fs = require("fs-extra");
 const glob = require("glob");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 class FileConcatenationPlugin {
   constructor(options) {
     this.options = {
-      deleteSourceFiles: false,
-      appendToDestination: false,
+      destination: undefined,
+      source: undefined,
       ...options,
     };
   }
@@ -33,35 +33,24 @@ class FileConcatenationPlugin {
   async run(_compilation) {
     let inputFiles = await this.performGlobSearch(this.sourceFilesGlob);
     let filteredFiles = inputFiles
-      .filter((a) => a.includes("vendor") || a.includes("ember-todo"))
       .sort((a) => {
         if (a.includes("vendor")) {
           return -1;
         }
         return 0;
       });
-    
+
     console.log(filteredFiles);
     let allInputFileContents = "";
     for (let inputFilePath of filteredFiles) {
       let inputFileContents = await fs.readFile(inputFilePath);
+      allInputFileContents += "\n";
       allInputFileContents += inputFileContents;
-
-      if (this.options.deleteSourceFiles) {
-        await fs.remove(inputFilePath);
-      }
-      allInputFileContents += '\n';
-      
-      allInputFileContents += `// ${inputFilePath}`;
-      
-      allInputFileContents += '\n';
+      allInputFileContents += `//# ${inputFilePath}`;
+      allInputFileContents += "\n";
     }
 
-    if (this.options.appendToDestination) {
-      await fs.appendFile(this.destinationFilePath, allInputFileContents);
-    } else {
-      await fs.writeFile(this.destinationFilePath, allInputFileContents);
-    }
+    await fs.writeFile(this.destinationFilePath, allInputFileContents);
   }
 
   performGlobSearch(globStr) {
@@ -91,25 +80,9 @@ module.exports = function (defaults) {
     staticComponents: true,
     staticEmberSource: true,
     packagerOptions: {
-      skipBabel: [{ package: "qunit" }],
       webpackConfig: {
-        mode: "production",
         entry: {
-          bundle: [path.resolve(__dirname, 'app/app.css')],
-        },
-        optimization: {
-          splitChunks: {
-            chunks() {
-              return false;
-            },
-          },
-        },
-        output: {
-          assetModuleFilename: "[name]",
-          asyncChunks: false,
-          chunkFilename: "[name]",
-          filename: "[name]",
-          publicPath: ASSET_PATH,
+          bundle: [path.resolve(__dirname, "app/app.css")],
         },
         module: {
           rules: [
@@ -117,12 +90,7 @@ module.exports = function (defaults) {
               test: /\.css$/i,
               use: [
                 {
-                  loader: 'postcss-loader',
-                  options: {
-                    postcssOptions: {
-                      config: 'postcss.config.js',
-                    },
-                  },
+                  loader: "postcss-loader",
                 },
               ],
             },

@@ -7,6 +7,7 @@ export default class App extends Application {
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
   Resolver = Resolver;
+  // Disable the autoboot of the Ember app.
   autoboot = false;
 }
 
@@ -28,23 +29,17 @@ class MyEmbeddedApp {
     this.options = options;
   }
 
-  get #appController() {
-    return this.#appInstance.lookup('controller:application');
-  }
-
   async start() {
+    // Boot the Ember app.
+    // Visit the application route.
     const appInstance = await this.#application.visit('/');
     this.#appInstance = appInstance;
 
     return this;
   }
-
-  // todos-change
-  on(name, callback) {
-    this.#appController[name] = callback;
-  }
 }
 
+// Register the `MyEmbeddedApp` to the global object.
 (function registerToGlobal() {
   let theGlobal;
   if (typeof window !== 'undefined') {

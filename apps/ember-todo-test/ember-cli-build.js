@@ -40,10 +40,8 @@ class FileConcatenationPlugin {
         }
         return 0;
       });
-
-    //    console.log('CONCATENATING FILES');
-    //    console.log(filteredFiles);
-    //
+    
+    console.log(filteredFiles);
     let allInputFileContents = "";
     for (let inputFilePath of filteredFiles) {
       let inputFileContents = await fs.readFile(inputFilePath);
@@ -52,6 +50,11 @@ class FileConcatenationPlugin {
       if (this.options.deleteSourceFiles) {
         await fs.remove(inputFilePath);
       }
+      allInputFileContents += '\n';
+      
+      allInputFileContents += `// ${inputFilePath}`;
+      
+      allInputFileContents += '\n';
     }
 
     if (this.options.appendToDestination) {

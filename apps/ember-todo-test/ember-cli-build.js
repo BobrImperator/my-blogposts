@@ -44,7 +44,6 @@ class FileConcatenationPlugin {
     let allInputFileContents = "";
     for (let inputFilePath of filteredFiles) {
       let inputFileContents = await fs.readFile(inputFilePath);
-      allInputFileContents += "\n";
       allInputFileContents += inputFileContents;
       allInputFileContents += `//# ${inputFilePath}`;
       allInputFileContents += "\n";

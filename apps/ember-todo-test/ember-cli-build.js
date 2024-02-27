@@ -94,6 +94,9 @@ module.exports = function (defaults) {
       skipBabel: [{ package: "qunit" }],
       webpackConfig: {
         mode: "production",
+        entry: {
+          bundle: [path.resolve(__dirname, 'app/app.css')],
+        },
         optimization: {
           splitChunks: {
             chunks() {
@@ -107,6 +110,23 @@ module.exports = function (defaults) {
           chunkFilename: "[name]",
           filename: "[name]",
           publicPath: ASSET_PATH,
+        },
+        module: {
+          rules: [
+            {
+              test: /\.css$/i,
+              use: [
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                    postcssOptions: {
+                      config: 'postcss.config.js',
+                    },
+                  },
+                },
+              ],
+            },
+          ],
         },
         plugins: [
           new FileConcatenationPlugin({

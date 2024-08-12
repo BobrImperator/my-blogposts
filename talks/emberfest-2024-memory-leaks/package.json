@@ -10,7 +10,7 @@
   "license": "",
   "description": "",
   "dependencies": {
-    "auto-reveal": "^0.2.1",
+    "auto-reveal": "^0.3.0",
     "auto-reveal-theme-mainmatter": "^0.1.2"
   }
 }

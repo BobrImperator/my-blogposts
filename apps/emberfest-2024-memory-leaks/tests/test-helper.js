@@ -4,18 +4,15 @@ import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';
 import { start } from 'ember-qunit';
-import { detectMemoryLeak } from 'memory-leak-detector';
+import { detectLeakingClasses } from 'memory-leak-detector';
 
 setApplication(Application.create(config.APP));
 
 setup(QUnit.assert);
 
-// TODO: Figure out how to run assertion after the test suite has run.
-//
-//QUnit.done(async (...args) => {
-//  console.log('done', args);
-//  const final = true;
-//  await detectMemoryLeak('title', document.title, );
-//});
+// this checks whether there are any of `our` classes retained after all tests have passed.
+Testem.on('after-tests-complete', (async (_config, _data, callback) => {
+  await detectLeakingClasses('title', document.title);
+}));
 
 start();

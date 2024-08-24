@@ -24,13 +24,14 @@ module('Acceptance | memory leak', function (hooks) {
   });
 
   test('MEMORY_LEAK: visiting repeatedly', async function (assert) {
-    for (let i = 0; i != 50; i++) {
+    for (let i = 1; i != 50; i++) {
       await visit('/');
       await visit('another');
     }
 
     const assertions = {
-      LeakerComponent: 0,
+      LeakerComponent: 50,
+      unknownC: 0,
     };
 
     const results = await detectMemoryLeak(
@@ -40,6 +41,26 @@ module('Acceptance | memory leak', function (hooks) {
     );
 
     assert.deepEqual(results, assertions);
+    assert.strictEqual(currentURL(), 'another');
+  });
+
+  test('MEMORY_LEAK: visiting repeatedly', async function (assert) {
+    for (let i = 1; i != 50; i++) {
+      await visit('/');
+      await visit('another');
+    }
+
+    // const assertions = {
+    //   LeakerComponent: 0,
+    // };
+
+    // const results = await detectMemoryLeak(
+    //   'url',
+    //   document.location.href,
+    //   assertions,
+    // );
+
+    // assert.deepEqual(results, assertions);
     assert.strictEqual(currentURL(), 'another');
   });
 });

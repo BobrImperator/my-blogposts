@@ -5,8 +5,12 @@ export default class LeakerComponent extends Component {
   constructor() {
     super(...arguments);
 
-    // window.addEventListener('click', this.handleClick);
+    window.addEventListener('click', this.handleClick);
   }
+
+ // willDestroy() {
+ //   window.removeEventListener('click', this.handleClick);
+ // }
 
   @action
   handleClick(a) {

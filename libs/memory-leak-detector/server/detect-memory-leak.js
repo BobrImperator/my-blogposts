@@ -4,25 +4,45 @@ const { promisify } = require("util");
 const writeFile = promisify(fs.writeFile);
 const Heapsnapshot = require("heapsnapshot");
 
-module.exports = async function detectMemoryLeak({
-  identifier,
-  assertions,
-  port,
-  host,
-  writeSnapshot,
-}) {
-  const client = await createCDPClient(identifier, port, host);
-  const snapshot = await captureHeapSnapshot(client, writeSnapshot);
-  const retainedClasses = findRetainedClassesInSnapshot(assertions, snapshot);
+module.exports = {
+  // Handles assertions for a specific set of classes e.g. { LeakyComponent: 50 }
+  async detectMemoryLeak({
+    identifier,
+    assertions,
+    port,
+    host,
+    writeSnapshot,
+  }) {
+    const client = await createCDPClient(identifier, port, host);
+    const snapshot = await captureHeapSnapshot(client, writeSnapshot);
+    const retainedClasses = findRetainedClassesByAssertions(
+      assertions,
+      snapshot,
+    );
 
-  return retainedClasses;
+    return retainedClasses;
+  },
+
+  // Checks whether any of the provided classes have at least one instance.
+  // If they do, this will end the process
+  async detectLeakingClasses({
+    identifier,
+    classes,
+    port,
+    host,
+    writeSnapshot,
+  }) {
+    const client = await createCDPClient(identifier, port, host);
+    const snapshot = await captureHeapSnapshot(client, writeSnapshot);
+    const retainedClasses = findRetainedClassesInSnapshot(classes, snapshot);
+
+    return retainedClasses;
+  },
 };
 
 async function createCDPClient(identifier, port, host) {
   try {
     const targets = await CDP.List({ port, host });
-    console.log(targets);
-    console.log(identifier);
     const testTarget = targets.find((target) => {
       const found = target[identifier.by].includes(identifier.value);
 
@@ -65,8 +85,23 @@ async function captureHeapSnapshot(client, writeSnapshot) {
   return new Heapsnapshot(parsedHeapSnapshot);
 }
 
-function findRetainedClassesInSnapshot(assertions, snapshot) {
-  const retainedClasses = new Map(Object.entries(assertions).map(([key, _value]) => [key, 0]));
+function findRetainedClassesByAssertions(assertions, snapshot) {
+  const retainedClasses = new Map(
+    Object.entries(assertions).map(([key, _value]) => [key, null]),
+  );
+
+  for (const node of snapshot) {
+    if (node.type === "object" && retainedClasses.has(node.name)) {
+      let retainedCount = retainedClasses.get(node.name) || 0;
+      retainedClasses.set(node.name, retainedCount + 1);
+    }
+  }
+
+  return retainedClasses;
+}
+
+function findRetainedClassesInSnapshot(classes, snapshot) {
+  const retainedClasses = new Map(classes.map((className) => [className, 0]));
 
   for (const node of snapshot) {
     if (node.type === "object" && retainedClasses.has(node.name)) {

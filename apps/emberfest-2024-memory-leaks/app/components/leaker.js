@@ -8,9 +8,9 @@ export default class LeakerComponent extends Component {
     window.addEventListener('click', this.handleClick);
   }
 
- // willDestroy() {
- //   window.removeEventListener('click', this.handleClick);
- // }
+  // willDestroy() {
+  //   window.removeEventListener('click', this.handleClick);
+  // }
 
   @action
   handleClick(a) {

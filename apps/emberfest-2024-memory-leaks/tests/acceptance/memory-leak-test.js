@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { visit, currentURL } from '@ember/test-helpers';
-import { setupApplicationTest } from 'emberfest-2024-memory-leaks/tests/helpers';
+import { setupApplicationTest } from 'emberfest-2024-memory-leaks-app/tests/helpers';
 import { detectMemoryLeak } from 'memory-leak-detector';
 
 module('Acceptance | memory leak', function (hooks) {
@@ -23,7 +23,7 @@ module('Acceptance | memory leak', function (hooks) {
     assert.strictEqual(currentURL(), '/');
   });
 
-  test('MEMORY_LEAK: visiting repeatedly', async function (assert) {
+  test('MEMORY_LEAK: asserting a class thats not in heap results in null for that assertion', async function (assert) {
     for (let i = 1; i != 50; i++) {
       await visit('/');
       await visit('another');
@@ -40,11 +40,12 @@ module('Acceptance | memory leak', function (hooks) {
       assertions,
     );
 
-    assert.deepEqual(results, assertions);
+    assert.equal(results.unknownC, null, "Returned 'null' when ");
+    assert.equal(results.LeakerComponent, 50, "Still leaking.");
     assert.strictEqual(currentURL(), 'another');
   });
 
-  test('MEMORY_LEAK: visiting repeatedly', async function (assert) {
+  test('MEMORY_LEAK: / visiting repeatedly', async function (assert) {
     for (let i = 1; i != 50; i++) {
       await visit('/');
       await visit('another');

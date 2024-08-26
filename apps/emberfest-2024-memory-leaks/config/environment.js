@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'emberfest-2024-memory-leaks',
+    modulePrefix: 'emberfest-2024-memory-leaks-app',
     environment,
     rootURL: '/',
     locationType: 'history',

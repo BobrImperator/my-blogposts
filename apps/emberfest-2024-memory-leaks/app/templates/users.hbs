@@ -1,0 +1,14 @@
+{{page-title "Users"}}
+
+{{#each @model.users as |user|}}
+  <ul>
+    <li>
+      <div>
+        <img src={{user.imageUrl}} alt="{{user.name}}'s profile pic" />
+        <span> {{user.name}} </span>
+      </div>
+    </li>
+  </ul>
+{{/each}}
+
+{{outlet}}

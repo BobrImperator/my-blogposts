@@ -1,7 +1,7 @@
 import Application from '@ember/application';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
-import config from 'emberfest-2024-memory-leaks/config/environment';
+import config from 'emberfest-2024-memory-leaks-app/config/environment';
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;

@@ -1,6 +1,6 @@
 # Environment
 
-```js
+```js [5-19]
 // ember-cli-build.js
 const TerserPlugin = require('terser-webpack-plugin'); // npm add -D terser-webpack-plugin
 module.exports = function (defaults) {

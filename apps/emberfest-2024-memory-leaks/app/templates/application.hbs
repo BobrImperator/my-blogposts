@@ -1,3 +1,25 @@
 {{page-title "Emberfest2024MemoryLeaks"}}
 
-{{outlet}}
+<div class="grid-container">
+  <div class="grid-item-a">
+    <ul>
+      <li>
+
+        <LinkTo @route="index"> Home </LinkTo>
+      </li>
+      <li>
+
+        <LinkTo @route="users"> Users </LinkTo>
+      </li>
+      <li>
+
+        <LinkTo @route="another"> Another </LinkTo>
+      </li>
+    </ul>
+  </div>
+  <div class="grid-item-c">
+    <main>
+      {{outlet}}
+    </main>
+  </div>
+</div>

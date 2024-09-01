@@ -11,7 +11,7 @@ setApplication(Application.create(config.APP));
 setup(QUnit.assert);
 
 // this checks whether there are any of `our` classes retained after all tests have passed.
-Testem.afterTests(async (_config, _data, callback) => {
+globalThis.Testem?.afterTests(async (_config, _data, callback) => {
   await detectLeakingClasses('title', document.title);
   callback();
 });

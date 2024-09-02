@@ -24,7 +24,7 @@ export default class LeakerComponent extends Component {
 
     //this.session.initialize();
     //this.user.loadUser();
-    // window.addEventListener('click', this.handleClick);
+    window.addEventListener('click', this.handleClick);
 
     // a = () => console.log(this);
   }
@@ -37,7 +37,7 @@ export default class LeakerComponent extends Component {
   handleClick(a) {
     // this.session.initialize();
     // this.user.loadUser();
-    console.log(this);
+    //console.log(this);
   }
 
   @action

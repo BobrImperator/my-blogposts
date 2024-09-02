@@ -7,6 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('another');
+  this.route('leaker');
   this.route('users');
 });

@@ -1,14 +1,17 @@
 {{page-title "Users"}}
 
-{{#each @model.users as |user|}}
-  <ul>
-    <li>
-      <div>
-        <img src={{user.imageUrl}} alt="{{user.name}}'s profile pic" />
-        <span> {{user.name}} </span>
-      </div>
+<ul class="list">
+  {{#each @model as |user|}}
+    <li class="list-item">
+      <div> {{user.name}} </div>
+      <img
+        class="profile-picture"
+        src={{user.imageUrl}}
+        alt="{{user.name}}'s profile pic"
+      />
+      <div>{{user.description}}</div>
     </li>
-  </ul>
-{{/each}}
+  {{/each}}
+</ul>
 
 {{outlet}}

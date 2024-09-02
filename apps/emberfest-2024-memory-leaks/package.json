@@ -82,6 +82,8 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@ember-data/json-api": "^5.3.8",
+    "@ember-data/store": "^5.3.8",
     "terser-webpack-plugin": "^5.3.10"
   }
 }

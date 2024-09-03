@@ -12,6 +12,9 @@ setup(QUnit.assert);
 
 // this checks whether there are any of `our` classes retained after all tests have passed.
 globalThis.Testem?.afterTests(async (_config, _data, callback) => {
+  // Give some time for Garbage collector to kick in
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
   await detectLeakingClasses('title', document.title);
   callback();
 });

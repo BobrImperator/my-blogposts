@@ -1,17 +1,9 @@
 {{page-title "Users"}}
 
-<ul class="list">
-  {{#each @model as |user|}}
-    <li class="list-item">
-      <div> {{user.name}} </div>
-      <img
-        class="profile-picture"
-        src={{user.imageUrl}}
-        alt="{{user.name}}'s profile pic"
-      />
-      <div>{{user.description}}</div>
-    </li>
-  {{/each}}
-</ul>
+<Pagination @records={{@model}}>
+  <:list as |users|>
+    <UserList @users={{users}} />
+  </:list>
+</Pagination>
 
 {{outlet}}

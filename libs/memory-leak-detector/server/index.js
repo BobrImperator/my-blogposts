@@ -79,6 +79,7 @@ function checkLeakingClasses(config) {
         process.exit(1);
       } else {
         res.json({ ok: true });
+        console.log("No memory leaks detected.");
         process.exit(0);
       }
     } catch (error) {

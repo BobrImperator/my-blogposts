@@ -18,7 +18,7 @@
   "packageManager": "pnpm@9.7.0",
   "pnpm": {
     "overrides": {
-      "intersection-observer-admin": "0.3.2"
+      "intersection-observer-admin": "0.3.4"
     }
   }
 }

@@ -8,3 +8,12 @@
   <div>{{@user.description}}</div>
 </li>
 <span {{in-viewport onEnter=(fn this.onEnterTask @user.id)}}></span>
+<!-- span {{did-intersect onEnter=(fn this.onEnterTask @user.id)}}></span -->
+
+<!-- Both of the above leak under intersection-observer-admin 0.3.2 -->
+<!-- However only `in-viewport` continues to leak on 0.3.4 in TEST environment -->
+<!-- lets find out why -->
+
+<!-- https://github.com/DockYard/ember-in-viewport/blob/master/addon/modifiers/in-viewport.js#L10 -->
+<!-- That could be a possible because of an element watch list that is compiled away in production environment -->
+<!-- This could be told in an interesting way, segwaying to 'setting up environment' where we shouldn't trust the test environment completely -->

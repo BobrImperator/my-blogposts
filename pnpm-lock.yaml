@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  intersection-observer-admin: 0.3.2
+  intersection-observer-admin: 0.3.4
 
 importers:
 
@@ -126,7 +126,7 @@ importers:
         version: 2.8.0(webpack@5.90.3)
       postcss-loader:
         specifier: ^8.1.0
-        version: 8.1.0(postcss@8.4.41)(webpack@5.90.3)
+        version: 8.1.0(postcss@8.4.35)(webpack@5.90.3)
       prettier:
         specifier: ^3.0.3
         version: 3.2.5
@@ -166,6 +166,9 @@ importers:
       ember-in-viewport:
         specifier: ^4.1.0
         version: 4.1.0(@babel/core@7.25.2)(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
+      ember-scroll-modifiers:
+        specifier: ^7.3.0
+        version: 7.3.0(@babel/core@7.25.2)(@ember/test-helpers@3.3.0(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
       ember-truth-helpers:
         specifier: ^4.0.3
         version: 4.0.3(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))
@@ -4047,6 +4050,16 @@ packages:
     resolution: {integrity: sha512-89oVHVJwmLDvGvAUWgS87KpBoRhy3aZ6U0Ql6HOmU4TrPkyaa8pM0W81wj9cIwjYprcQtN9EwzZMHnq46+oUyw==}
     engines: {node: 8.* || 10.* || >= 12}
 
+  ember-scroll-modifiers@7.3.0:
+    resolution: {integrity: sha512-v+TDJdQB2s1m1z/mOKkNyQbc/dp3afLVBcvqeUT4YFvWBzRr5hg8pB7SImel21kyFpjW/ooKioEPz+yCj9/tRg==}
+    engines: {node: 16.* || >= 18}
+    peerDependencies:
+      '@ember/test-helpers': '>=3.0.0'
+      ember-source: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      '@ember/test-helpers':
+        optional: true
+
   ember-source@5.10.2:
     resolution: {integrity: sha512-8yYbbIdkxbqdZkAIFp5ldeUzYz8R3syWAUQAyEuf/eQm2JxFXcrE69zdyDUFNpN3zWIhJsvQdEL4Xxd6HMpeJg==}
     engines: {node: '>= 16.*'}
@@ -5000,8 +5013,8 @@ packages:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
 
-  intersection-observer-admin@0.3.2:
-    resolution: {integrity: sha512-kJEcF9iVRuI4thXiJd28UzFDgvFHBNUgwkKA4F0bPMmRdzc+1Eq7/J13n2gSgfZ5tsVxb+wJOV7k3DXcsc7D6Q==}
+  intersection-observer-admin@0.3.4:
+    resolution: {integrity: sha512-L9W5vBSu7W5Dx/RcbWcErNwoke3xWIAD2SADbmAZnsF9XL667keuKgaqnuwTY4XU9UwhzXref5tnNF5ZLTIQ3w==}
 
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
@@ -13677,7 +13690,7 @@ snapshots:
       ember-destroyable-polyfill: 2.0.3(@babel/core@7.25.2)
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))
       fast-deep-equal: 2.0.1
-      intersection-observer-admin: 0.3.2
+      intersection-observer-admin: 0.3.4
       raf-pool: 0.1.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -13782,6 +13795,22 @@ snapshots:
       recast: 0.18.10
     transitivePeerDependencies:
       - supports-color
+
+  ember-scroll-modifiers@7.3.0(@babel/core@7.25.2)(@ember/test-helpers@3.3.0(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0))(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0):
+    dependencies:
+      ember-auto-import: 2.7.4(webpack@5.93.0)
+      ember-cli-babel: 7.26.11
+      ember-cli-htmlbars: 6.3.0
+      ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))
+      ember-source: 5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0)
+      intersection-observer-admin: 0.3.4
+    optionalDependencies:
+      '@ember/test-helpers': 3.3.0(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@glint/template'
+      - supports-color
+      - webpack
 
   ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0):
     dependencies:
@@ -15262,7 +15291,7 @@ snapshots:
       hasown: 2.0.1
       side-channel: 1.0.5
 
-  intersection-observer-admin@0.3.2: {}
+  intersection-observer-admin@0.3.4: {}
 
   invariant@2.2.4:
     dependencies:
@@ -16293,11 +16322,11 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-loader@8.1.0(postcss@8.4.41)(webpack@5.90.3):
+  postcss-loader@8.1.0(postcss@8.4.35)(webpack@5.90.3):
     dependencies:
       cosmiconfig: 9.0.0
       jiti: 1.21.0
-      postcss: 8.4.41
+      postcss: 8.4.35
       semver: 7.6.0
     optionalDependencies:
       webpack: 5.90.3

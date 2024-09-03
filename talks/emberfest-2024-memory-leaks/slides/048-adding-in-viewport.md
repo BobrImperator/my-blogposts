@@ -1,3 +1,8 @@
+# Image lazy loading
+
+# After
+
+```hbs
 <li class="list-item">
   <div> {{@user.name}} </div>
   <img
@@ -8,3 +13,4 @@
   <div>{{@user.description}}</div>
 </li>
 <span {{in-viewport onEnter=(fn this.onEnterTask @user.id)}}></span>
+```

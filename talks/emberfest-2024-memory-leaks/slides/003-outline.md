@@ -15,6 +15,7 @@
 <!-- I'll jump ahead and say that this is probably where most of the leaked memory will come from. -->
 <!-- Add a section on capturing event listeners build up over time-->
 <!-- Add a section on tricks such as simply accessing a route in a loop or playing with pagination -->
+<!-- Add a section on the motivation behind the talk, ember-in-viewport leaking, getting it fixed and how -->
 5. Iterating quickly
 <!-- There's no real silver bullet to dealing with a memory leak and finding them might be a gruelsome experience. -->
 <!-- You can make this much faster by leveraging your test environment e.g. rendering pages or components in a loop to quickly bloat up the memory to expose the leaking parts. -->

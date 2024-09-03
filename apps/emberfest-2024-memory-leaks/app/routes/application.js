@@ -13,7 +13,7 @@ export default class ApplicationRoute extends Route {
   seed() {
     for (let id = 1; id < 100; id++) {
       this.store.createRecord('person', {
-        id,
+        id: id.toString(),
         imageUrl: `https://picsum.photos/id/${id}/200/300`,
         name: `name-${id}`,
         description: 'desc',

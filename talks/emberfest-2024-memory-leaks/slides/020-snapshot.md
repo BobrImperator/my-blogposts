@@ -1,3 +1,5 @@
+# Snapshot
+
 Chrome's snapshot viewing tool groups objects by their type.
 
 ![Inspecting objects by their constructor type](/snapshot/class_group_1.png)

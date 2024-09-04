@@ -1,4 +1,3 @@
-
 One feature later
 
 ![we've added the feature](/snapshot/memory_leak_5.png)

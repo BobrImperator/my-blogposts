@@ -1,7 +1,3 @@
-# Image lazy loading
-
-# Before
-
 ```hbs
 <li class="list-item">
   <div> {{@user.name}} </div>

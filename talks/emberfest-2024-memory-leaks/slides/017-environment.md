@@ -1,5 +1,3 @@
-# Environment
-
 - Don't use browser extensions
 - Use production builds `ember serve -e=production`
 - A quick way to create a clean sandbox is to use incognito

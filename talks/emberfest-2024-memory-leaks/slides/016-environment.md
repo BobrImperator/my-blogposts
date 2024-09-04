@@ -1,5 +1,3 @@
-# Environment
-
 ```js [5-19]
 // config/targets.js
 "use strict";

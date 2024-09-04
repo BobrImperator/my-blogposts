@@ -6,10 +6,11 @@ export default class LeakerComponent extends Component {
   constructor() {
     super(...arguments);
 
-    window.addEventListener('click', () => {
+    window.addEventListener("click", () => {
       this.args.readSomething;
     });
   }
+}
 ```
 
 Note:

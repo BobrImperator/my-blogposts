@@ -15,6 +15,7 @@ export default class LeakerComponent extends Component {
 
   @action
   handleClick() {}
+}
 ```
 
 Note:

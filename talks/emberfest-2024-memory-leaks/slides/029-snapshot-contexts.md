@@ -1,5 +1,3 @@
-# What are these?
-
 ![confirming the properties](/snapshot/class_group_2.png)
 
 - System / Context

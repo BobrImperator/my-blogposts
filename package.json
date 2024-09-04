@@ -7,7 +7,7 @@
     "test:memory-leak": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:memory-leak; wait $pid",
     "test:memory-leak-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:memory-leak --server; wait $pid",
     "test:users": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users; wait $pid",
-    "test:users-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users --server; wait $pid" 
+    "test:users-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users --server; wait $pid"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,10 @@
   "packageManager": "pnpm@9.7.0",
   "pnpm": {
     "overrides": {
-      "intersection-observer-admin": "0.3.4"
+      "intersection-observer-admin": "0.3.2"
+    },
+    "patchedDependencies": {
+      "auto-reveal": "patches/auto-reveal.patch"
     }
   }
 }

@@ -17,13 +17,11 @@ html, body {
 .grid-item-a {
   grid-row: 1 / 5;  /* Span from row 1 to row 4 (full height) */
   grid-column: 1 / 2; /* Span across the first column */
-  background-color: lightblue;
 }
 
 .grid-item-c {
   grid-row: 1 / 5;  /* Span from row 2 to row 4 (three rows) */
   grid-column: 2 / 5; /* Span from column 2 to column 4 (three columns) */
-  background-color: lightgreen;
 }
 
 .main {

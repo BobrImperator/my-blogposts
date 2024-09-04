@@ -9,9 +9,9 @@ console.log(me); // { name: "BobrImperator" }
 ```
 
 1. Allocated an object with property `name`
-2. Assigned its reference to `x`
+2. Assigned its reference to `me`
 3. Passed that reference to `console.log`
-4. `x` is not used elsewhere, the Garbage Collector cleans up.
+4. `me` is not used elsewhere, the Garbage Collector cleans up.
 
 Note:
 Meaning that we as developers don't need to worry about allocating and deallocating space for data and then manage their references.

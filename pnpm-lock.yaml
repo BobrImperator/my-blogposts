@@ -5,7 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  intersection-observer-admin: 0.3.4
+  intersection-observer-admin: 0.3.2
+
+patchedDependencies:
+  auto-reveal:
+    hash: 72q6sotp34hg5tuwlwiwluzsye
+    path: patches/auto-reveal.patch
 
 importers:
 
@@ -367,10 +372,13 @@ importers:
     dependencies:
       auto-reveal:
         specifier: ^0.3.0
-        version: 0.3.0(@types/node@20.11.20)(terser@5.28.1)
+        version: 0.3.0(patch_hash=72q6sotp34hg5tuwlwiwluzsye)(@types/node@20.11.20)(terser@5.28.1)
       auto-reveal-theme-mainmatter:
         specifier: ^0.1.2
         version: 0.1.2
+      reveal.js-mermaid-plugin:
+        specifier: ^2.0.0
+        version: 2.3.0
 
 packages:
 
@@ -5013,8 +5021,8 @@ packages:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
 
-  intersection-observer-admin@0.3.4:
-    resolution: {integrity: sha512-L9W5vBSu7W5Dx/RcbWcErNwoke3xWIAD2SADbmAZnsF9XL667keuKgaqnuwTY4XU9UwhzXref5tnNF5ZLTIQ3w==}
+  intersection-observer-admin@0.3.2:
+    resolution: {integrity: sha512-kJEcF9iVRuI4thXiJd28UzFDgvFHBNUgwkKA4F0bPMmRdzc+1Eq7/J13n2gSgfZ5tsVxb+wJOV7k3DXcsc7D6Q==}
 
   invariant@2.2.4:
     resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
@@ -6454,6 +6462,10 @@ packages:
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  reveal.js-mermaid-plugin@2.3.0:
+    resolution: {integrity: sha512-61t2jWPCB0+PYsO1lpoUXX7NfhcRwavpEi5r20Au7dEdoYzA3aYwP/vP90mBc+bvCcCPIAgulcixllGob59jkA==}
+    engines: {node: '>=10.0.0'}
 
   reveal.js@5.1.0:
     resolution: {integrity: sha512-KDt7m0+xwKV6nAZt4CNPVFBf42sTKRQapg0bGGKB5PKO5XvChnMfwlZkybydHiQJ7p5+6LbHKRGrhXODdoNIaA==}
@@ -11177,7 +11189,7 @@ snapshots:
     dependencies:
       '@yukaii/github-highlightjs-themes': 1.0.0
 
-  auto-reveal@0.3.0(@types/node@20.11.20)(terser@5.28.1):
+  auto-reveal@0.3.0(patch_hash=72q6sotp34hg5tuwlwiwluzsye)(@types/node@20.11.20)(terser@5.28.1):
     dependencies:
       commander: 12.1.0
       reveal.js: 5.1.0
@@ -13690,7 +13702,7 @@ snapshots:
       ember-destroyable-polyfill: 2.0.3(@babel/core@7.25.2)
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))
       fast-deep-equal: 2.0.1
-      intersection-observer-admin: 0.3.4
+      intersection-observer-admin: 0.3.2
       raf-pool: 0.1.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -13803,7 +13815,7 @@ snapshots:
       ember-cli-htmlbars: 6.3.0
       ember-modifier: 4.2.0(@babel/core@7.25.2)(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))
       ember-source: 5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0)
-      intersection-observer-admin: 0.3.4
+      intersection-observer-admin: 0.3.2
     optionalDependencies:
       '@ember/test-helpers': 3.3.0(ember-source@5.10.2(@glimmer/component@1.1.2(@babel/core@7.25.2))(rsvp@4.8.5)(webpack@5.93.0))(webpack@5.93.0)
     transitivePeerDependencies:
@@ -15291,7 +15303,7 @@ snapshots:
       hasown: 2.0.1
       side-channel: 1.0.5
 
-  intersection-observer-admin@0.3.4: {}
+  intersection-observer-admin@0.3.2: {}
 
   invariant@2.2.4:
     dependencies:
@@ -16684,6 +16696,8 @@ snapshots:
   retry@0.12.0: {}
 
   reusify@1.0.4: {}
+
+  reveal.js-mermaid-plugin@2.3.0: {}
 
   reveal.js@5.1.0: {}
 

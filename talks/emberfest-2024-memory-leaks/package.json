@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "auto-reveal": "^0.3.0",
-    "auto-reveal-theme-mainmatter": "^0.1.2"
+    "auto-reveal-theme-mainmatter": "^0.1.2",
+    "reveal.js-mermaid-plugin": "^2.0.0"
   }
 }

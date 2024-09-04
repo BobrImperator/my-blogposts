@@ -2,9 +2,9 @@
 
 ```js [5-19]
 // ember-cli-build.js
-const TerserPlugin = require('terser-webpack-plugin'); // npm add -D terser-webpack-plugin
+const TerserPlugin = require("terser-webpack-plugin"); // npm add -D terser-webpack-plugin
 module.exports = function (defaults) {
-  return require('@embroider/compat').compatBuild(app, Webpack, {
+  return require("@embroider/compat").compatBuild(app, Webpack, {
     packagerOptions: {
       webpackConfig: {
         optimization: {

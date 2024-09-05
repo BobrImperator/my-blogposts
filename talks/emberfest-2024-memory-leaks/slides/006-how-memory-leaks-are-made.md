@@ -1,4 +1,4 @@
-# How memory leaks are made?
+# How memory leaks occur?
 
 <style type="text/css">
 .overview g[data-id="UsersRoute"] rect.label-container {
@@ -31,3 +31,5 @@ There's the system stuff i.e. whatever browser provides.
 The (Ember) Application, some of it's entities, where Route and Components usually result in some HTML.
 
 When we'd now go to `AnotherRoute` we'd expect `UsersRoute` to teardown it's HTML and release related components.
+
+Or you've triggered some data load.

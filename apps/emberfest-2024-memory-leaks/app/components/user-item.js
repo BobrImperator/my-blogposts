@@ -8,4 +8,8 @@ export default class UserListItemComponent extends Component {
     this.componentInViewport = true;
     console.log(`user ${id} in-viewport`);
   };
+
+  likeProfile = () => {
+    console.log("profile liked");
+  }
 }

@@ -12,4 +12,11 @@ export default defineConfig({
       extensions,
     }),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        "embedded": "./embedded.js"
+      }
+    }
+  }
 });

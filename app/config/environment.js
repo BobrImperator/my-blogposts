@@ -1,7 +1,14 @@
 import loadConfigFromMeta from '@embroider/config-meta-loader';
 import { assert } from '@ember/debug';
 
-const config = loadConfigFromMeta('ember-todo-vite-test');
+// const config = loadConfigFromMeta('ember-todo-vite-test');
+
+const config = {
+  modulePrefix: 'ember-todo-vite-test',
+  locationType: 'none',
+  rootURL: '/',
+  APP: {}
+};
 
 assert(
   'config is not an object',

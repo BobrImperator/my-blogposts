@@ -1,4 +1,6 @@
 packages:
+  - 'talks/*'
   - 'posts/*'
   - 'apps/*'
   - 'addons/*'
+  - 'libs/*'

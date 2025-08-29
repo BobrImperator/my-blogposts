@@ -1,0 +1,36 @@
+diff --git a/package.json b/package.json
+index 2317bad882224c5e35f81503e1fd29e13e9b6780..c05c0ab406328f5871a1d8d6258a4142f71bf0f6 100644
+--- a/package.json
++++ b/package.json
+@@ -23,7 +23,8 @@
+     "reveal.js": "5.1.0",
+     "vite": "5.4.0",
+     "vite-plugin-ejs": "1.7.0",
+-    "vite-plugin-static-copy": "1.0.6"
++    "vite-plugin-static-copy": "1.0.6",
++    "reveal.js-mermaid-plugin": "^2.0.0"
+   },
+   "devDependencies": {
+     "@biomejs/biome": "1.8.3",
+diff --git a/src/main.js b/src/main.js
+index b1370c24df3f16f4811f97656eaf4be330c5b17f..1f766c118520bf8a5a0e97a10c7c8f06bfb73471 100644
+--- a/src/main.js
++++ b/src/main.js
+@@ -2,6 +2,7 @@ import Reveal from 'reveal.js';
+ import Highlight from 'reveal.js/plugin/highlight/highlight.esm.js';
+ import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
+ import Notes from 'reveal.js/plugin/notes/notes.esm.js';
++import Mermaid from 'reveal.js-mermaid-plugin/plugin/mermaid/mermaid.esm.js'
+ 
+ import 'reveal.js/dist/reveal.css';
+ 
+@@ -44,7 +45,8 @@ const defaultConfig = {
+ 	height: 960,
+ 	margin: 0.1,
+ 	highlight: {},
+-	plugins: [Markdown, Highlight, Notes],
++  slideNumber: 'c/t',
++	plugins: [Markdown, Highlight, Notes, Mermaid],
+ };
+ 
+ let themeConfig = {};

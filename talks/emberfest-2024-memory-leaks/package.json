@@ -1,0 +1,17 @@
+{
+  "name": "emberfest-2024-memory-leaks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "auto-reveal",
+    "build": "auto-reveal build"
+  },
+  "author": "",
+  "license": "",
+  "description": "",
+  "dependencies": {
+    "auto-reveal": "^0.3.0",
+    "auto-reveal-theme-mainmatter": "^0.1.2",
+    "reveal.js-mermaid-plugin": "^2.0.0"
+  }
+}

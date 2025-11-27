@@ -4,7 +4,7 @@ import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig({
   plugins: [
-    classicEmberSupport(),
+    // classicEmberSupport(),
     ember(),
     // extra plugins here
     babel({
@@ -13,10 +13,22 @@ export default defineConfig({
     }),
   ],
   build: {
+    minify: false,
     rollupOptions: {
       input: {
-        "embedded": "./embedded.js"
-      }
-    }
-  }
+        index: 'index.html',
+        site: 'embedded.html',
+        todoapp: './embedded.js'
+      },
+      output: {
+        dir: 'embedded-dist',
+        entryFileNames: '[name].js',
+      },
+    },
+    // lib: {
+    //   entry: ['./embedded.js'],
+    //   formats: ['es'],
+    //   // fileName: (format, entryname) => `embedded.js`
+    // },
+  },
 });

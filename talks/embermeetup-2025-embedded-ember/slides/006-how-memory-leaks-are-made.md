@@ -1,35 +1,29 @@
-# How memory leaks occur?
+# The before - webpack and broccoli (pre-vite)
 
-<style type="text/css">
-.overview g[data-id="UsersRoute"] rect.label-container {
-  fill: gray !important;
-}
-</style>
 
-```mermaid overview
-%%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+https://mainmatter.com/blog/2024/03/27/embeddable-ember-apps/
 
-stateDiagram-v2
-    system --> Application: Window/Document
-    Application --> UsersRoute
-    Application --> AnotherRoute
-    Application --> Service
-    UsersRoute --> UserListComponent
-    UserListComponent --> UserItemComponent
+```js
+<!-- Loading the app -->
+<script src="https://ember-todo-test.onrender.com/bundle.js"></script>
+```
 
-    AnotherRoute --> HTML
-    UserListComponent --> HTML
-    UserItemComponent --> HTML
-    SidebarComponent --> HTML
+```js
+// Usage
+const app = new window.MyEmbeddedApp(htmlElement, options);
+await app.start();
 ```
 
 Note:
-Here's a simple, approximate diagram of an application we'll be debugging later.
-Greyed out tile is the current route.
 
-There's the system stuff i.e. whatever browser provides.
-The (Ember) Application, some of it's entities, where Route and Components usually result in some HTML.
+I've previously explored the topic a bit in late 2023 and released the findings as a blog post in March 2024.
+During that time work to enable full ESM and Vite support was coming along.
+Statically analyzable Ember apps meant better size optimization, build flexibility and developmente experience.
 
-When we'd now go to `AnotherRoute` we'd expect `UsersRoute` to teardown it's HTML and release related components.
+Coincidentally same month next year our team thanks to the Ember Initiative released an `ember-vite-codemod` to assist users to move towards Vite.
+A few more months later, Ember apps built with Vite no longer rely on AMD loaders - this is what this post is about; revisting the topic of embeddable Ember apps with Vite.
 
-Or you've triggered some data load.
+Ember 6.8 brought a default Vite blueprint, but in Ember 4.0 it was already possible.
+Embroider 3 and webpack were generating modules and module resolution was still AMD.
+
+The moment Vite was introduced, AMD was no longer. AMD has become opt-in and not the default.

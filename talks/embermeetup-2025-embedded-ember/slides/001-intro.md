@@ -1,6 +1,6 @@
 #
 
-# Memory Leak found, now what?
+# Embed Ember apps anywhere!
 
 <style type="text/css">
 .mermaid {

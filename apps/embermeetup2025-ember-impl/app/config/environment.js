@@ -1,3 +1,4 @@
+// <!-- @EMBERMEETUP2025  -->
 import loadConfigFromMeta from '@embroider/config-meta-loader';
 import { assert } from '@ember/debug';
 

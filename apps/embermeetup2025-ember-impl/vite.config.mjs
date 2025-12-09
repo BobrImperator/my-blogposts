@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import { extensions, classicEmberSupport, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
+// <!-- @EMBERMEETUP2025  -->
+
 export default defineConfig({
   plugins: [
     classicEmberSupport(),

@@ -1,3 +1,4 @@
+// <!-- @EMBERMEETUP2025  -->
 import App from './app/app';
 
 export default class MyEmbeddedApp {

@@ -9,7 +9,8 @@
     "test:users": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users; wait $pid",
     "test:users-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users --server; wait $pid",
     "em25-impl": "pnpm -F embermeetup2025-ember-impl",
-    "em25-use": "pnpm -F embermeetup2025-embedded-usage"
+    "em25-use": "pnpm -F embermeetup2025-embedded-usage",
+    "em25-talk": "pnpm -F embermeetup2025-embedded-ember"
   },
   "keywords": [],
   "author": "",

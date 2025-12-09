@@ -1,5 +1,5 @@
-import Application from 'ember-todo-vite-test/app';
-import config from 'ember-todo-vite-test/config/environment';
+import Application from 'embermeetup2025-ember-impl/app';
+import config from 'embermeetup2025-ember-impl/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

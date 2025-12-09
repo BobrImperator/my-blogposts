@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'ember-todo-vite-test',
+    modulePrefix: 'embermeetup2025-ember-impl',
     environment,
     rootURL: '/',
     locationType: 'history',

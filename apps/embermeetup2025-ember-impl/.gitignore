@@ -2,6 +2,7 @@
 /dist/
 /declarations/
 /tmp/
+/embedded-dist/
 
 # dependencies
 /node_modules/

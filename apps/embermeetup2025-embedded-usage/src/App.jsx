@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { M as EmbeddedEmber } from "ember-todo-vite-test/embedded";
+import { M as EmbeddedEmber } from "embermeetup2025-ember-impl/embedded";
 import { useRef } from 'react';
 import { useEffect } from 'react';
 
@@ -39,7 +39,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <div ember-placeholder ref={embeddedRef}></div>
+      <div ember-placeholder="true" ref={embeddedRef}></div>
     </>
   )
 }

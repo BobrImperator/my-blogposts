@@ -18,7 +18,7 @@ await app.start();
 
 Note:
 
-@TODO reorder this
+@TODO: Some of the text here needs to be moved to different slides
 
 I've previously explored the topic a bit in late 2023 and released the findings as a blog post in March 2024.
 During that time work to enable full ESM and Vite support was coming along.

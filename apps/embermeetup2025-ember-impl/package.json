@@ -28,7 +28,7 @@
   "exports": {
     "./tests/*": "./tests/*",
     "./*": "./app/*",
-    "./embedded": "./embedded-dist/todoapp.js"
+    "./embedded": "./embedded-dist/embedded.js"
   },
   "files": ["embedded-dist"],
   "devDependencies": {

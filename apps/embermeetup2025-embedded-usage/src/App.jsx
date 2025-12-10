@@ -1,21 +1,21 @@
 // <!-- @EMBERMEETUP2025  -->
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { M as EmbeddedEmber } from "embermeetup2025-ember-impl/embedded";
-import { useRef } from 'react';
-import { useEffect } from 'react';
-
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import EmbeddedEmber from "embermeetup2025-ember-impl/embedded";
+import { useRef } from "react";
 
 function App() {
-  const embeddedRef = useRef(null);
-  const [count, setCount] = useState(0)
+  const initialized = useRef(false);
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    console.log(EmbeddedEmber);
-    new EmbeddedEmber(embeddedRef.current).start();
-  }, [embeddedRef]);
+  const runEmberApp = (node) => {
+    if (node && !initialized.current) {
+      new EmbeddedEmber(node).start();
+      initialized.current = true;
+    }
+  };
 
   return (
     <>
@@ -40,9 +40,9 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <div ember-placeholder="true" ref={embeddedRef}></div>
+      <div ember-placeholder="true" ref={runEmberApp}></div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

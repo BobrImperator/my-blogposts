@@ -18,6 +18,8 @@ await app.start();
 
 Note:
 
+@TODO reorder this
+
 I've previously explored the topic a bit in late 2023 and released the findings as a blog post in March 2024.
 During that time work to enable full ESM and Vite support was coming along.
 Statically analyzable Ember apps meant better size optimization, build flexibility and development experience.

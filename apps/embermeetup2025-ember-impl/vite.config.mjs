@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { extensions, classicEmberSupport, ember } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 import { resolve } from 'node:path';
+import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
 // <!-- @EMBERMEETUP2025  -->
 
@@ -9,11 +10,19 @@ export default defineConfig({
   plugins: [
     classicEmberSupport(),
     ember(),
+    libAssetsPlugin({
+
+          exclude: ["**/@embroider/**"]
+              //exclude: [/@embroider\/virtual\/.*/], // ← ignore virtual modules
+        // include: /\.a?png(\?.*)?$/
+        // include: /\.png(\?.*)?$/
+      }),
     // extra plugins here
     babel({
       babelHelpers: 'runtime',
       extensions,
     }),
+    // https://github.com/laynezh/vite-plugin-lib-assets
   ],
   build: {
     // minify: false,

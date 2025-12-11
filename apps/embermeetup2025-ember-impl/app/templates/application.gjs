@@ -1,6 +1,6 @@
 import { pageTitle } from 'ember-page-title';
 import { WelcomePage } from 'ember-welcome-page';
-import soldierAttack from '../../tiny/characters/soldier/Soldier/Soldier.png'
+import tomster from '../../assets/bielsko-tomster.webp'
 
 // <!-- @EMBERMEETUP2025 -->
 
@@ -9,9 +9,9 @@ import soldierAttack from '../../tiny/characters/soldier/Soldier/Soldier.png'
 
   {{outlet}}
 
+  <img width="500px" src={{tomster}} />
   {{! The following component displays Ember's default welcome message. }}
   <WelcomePage />
   {{! Feel free to remove this! }}
 
-  <img src={{soldierAttack}} />
 </template>

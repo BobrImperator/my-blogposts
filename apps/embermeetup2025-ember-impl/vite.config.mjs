@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     classicEmberSupport(),
     ember(),
-    // libAssetsPlugin(),
+    libAssetsPlugin(),
     // extra plugins here
     babel({
       babelHelpers: 'runtime',

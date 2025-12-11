@@ -1,0 +1,3 @@
+[submodule "libs/ember-welcome-page"]
+	path = libs/ember-welcome-page
+	url = git@github.com:BobrImperator/ember-welcome-page.git

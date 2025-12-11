@@ -10,10 +10,11 @@ import { useRef } from "react";
 function App() {
   const initialized = useRef(false);
   const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
 
   const runEmberApp = (node) => {
     if (node && !initialized.current) {
-      new EmbeddedEmber(node).start();
+      new EmbeddedEmber(node, { onTodosChanged: setTodos, canRemoveTodos: true }).start();
       initialized.current = true;
     }
   };
@@ -41,6 +42,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
+      <div>{todos.length}</div>
       <div ember-placeholder="true" ref={runEmberApp}></div>
     </>
   );

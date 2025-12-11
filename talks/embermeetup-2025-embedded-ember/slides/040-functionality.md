@@ -1,15 +1,8 @@
-// <!-- @EMBERMEETUP2025 -->
-import tomster from '../../assets/bielsko-tomster.webp'
-import { getOwner } from "@ember/application";
-import { tracked } from "@glimmer/tracking";
-import '../styles/app.css';
-import TodoList from '../components/todo-list.gjs';
+# Functionality
 
-import Component from '@glimmer/component';
-
+```gjs
 export default class ApplicationRouteComponent extends Component {
   @tracked todos = [];
-
   config = getOwner(this).lookup("config:embedded");
 
   receiveTodos = todos => {
@@ -20,12 +13,13 @@ export default class ApplicationRouteComponent extends Component {
   };
 
   <template>
-    {{outlet}}
-
     <div class="ember-todo-test">
       <TodoList @todos={{this.todos}} @onChange={{this.receiveTodos}} @canRemoveTodos={{this.config.canRemoveTodos}} />
     </div>
-
-    <img width="500px" src={{tomster}} />
   </template>
 }
+```
+
+Note:
+
+Here's a basic todo functionality, notice how we're making use of the embedded config.

@@ -28,7 +28,7 @@ export default defineConfig({
         entryFileNames: '[name].js',
       },
     },
-    // Either the lib or `index: index.html` input are needed for this
+    // Either the lib or `: index.html` input are needed for this
     lib: {
       entry: resolve(__dirname, 'embedded.js'),
       formats: ['es'],
@@ -46,6 +46,4 @@ You can provide `index.html` too if your project serves as both an app and a lib
 
 `build.lib` also needs to point to the `embedded.js` entrypoint, the reason behind this is still unknown to me, but without that the build will be borked.
 An alternative to that would be creating an `embedded.html` that uses our new `embedded.js` entrypoint. That at this moment requires patching `@embroider/vite` due to it expecting `content-for` hooks, which we don't want.
-
-
 

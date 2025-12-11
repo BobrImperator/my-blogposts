@@ -1,2 +1,2 @@
-# Memory Leak found, now what?
+# Embed Ember apps anywhere!
 

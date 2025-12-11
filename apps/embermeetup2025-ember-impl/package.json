@@ -28,7 +28,8 @@
   "exports": {
     "./tests/*": "./tests/*",
     "./*": "./app/*",
-    "./embedded": "./embedded-dist/embedded.js"
+    "./embedded": "./embedded-dist/embedded.js",
+    "./styles.css": "./embedded-dist/embermeetup2025-ember-impl.css"
   },
   "files": [
     "embedded-dist"
@@ -68,7 +69,7 @@
     "ember-resolver": "^13.1.1",
     "ember-source": "~6.5.0-beta.1",
     "ember-template-lint": "^7.7.0",
-    "ember-welcome-page": "^7.0.2",
+    "ember-welcome-page": "^8.0.4",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-ember": "^12.5.0",
@@ -83,7 +84,8 @@
     "stylelint-config-standard": "^38.0.0",
     "testem": "^3.16.0",
     "tracked-built-ins": "^4.0.0",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-static-copy": "^3.1.4"
   },
   "engines": {
     "node": ">= 18"

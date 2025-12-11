@@ -4,6 +4,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import EmbeddedEmber from "embermeetup2025-ember-impl/embedded";
+import "embermeetup2025-ember-impl/styles.css";
 import { useRef } from "react";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + Ember</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

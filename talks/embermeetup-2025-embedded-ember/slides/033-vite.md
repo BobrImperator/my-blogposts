@@ -1,6 +1,6 @@
 # Optimizing size
 
-```bash
+```bash [3-4, 8]
 # Ember library
 embedded-dist/@embroider/virtual/vendor.js        0.32 kB
 embedded-dist/assets/5e585d591fb8408c.webp       39.69 kB
@@ -12,7 +12,7 @@ embedded-dist/embedded.js                     2,043.78 kB │ gzip: 549.29 kB
 
 ```
 
-```bash
+```bash [4, 6]
 # React consumer
 dist/index.html                               0.49 kB │ gzip:   0.32 kB
 dist/assets/react-CHdo91hT.svg                4.13 kB │ gzip:   2.05 kB

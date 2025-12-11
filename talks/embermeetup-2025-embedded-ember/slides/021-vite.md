@@ -1,23 +1,26 @@
 # We're on Vite
 
-```gts
+```diff x-small-font
+// node_modules/ember-welcome-page/dist/components/ember-welcome-page.js
+import { setComponentTemplate } from '@ember/component';
++ import constructionUrl from './construction.png';
 
-// /ember-welcome-page/images/construction.png
-const constructionUrl =
-    new URL('./construction.png', import.meta.url).href;
+- const constructionUrl = new URL('./construction.png', import.meta.url).href;
 
-<div class="tomster">
-  <img src={{constructionUrl}} alt="Under construction" />
-</div>
+class WelcomePageComponent extends Component {
+  static { setComponentTemplate(...) }
+}
+
+
 ```
 
-```bash
-embedded-dist/ember-welcome-page/images/construction.png     91.11 kB
-```
+<img src="/snapshot/fixed_welcome_page_construction.png" />
+
 
 Note:
 
-The above works just fine for a web app because the path is relative to the dist which normally is able to serve such paths.
-However when an ember app is pulled in as a library then there's no such guarantee and also what's happening is that `ember-welcome-page` is pre-built when the ember library builds and at that point the path is already created. And the final consumer of the library doesn't realize that path needs to be converted.
+I'll jump ahead slightly but an interesting thing I noticed when checking out different build options and setups is:
+The `construction.png` import can't be used directly in an addon built with rollup, even though it should be possible. It fails due to lacking plugins but even though those are added, it'd still fail: indicating there's something worth investigating in how Ember addons are built.
 
-...is what I would say but a couple days ago v8 of `ember-welcome-page` was released and it actually works in react now.
+Once an already built addon dist is patched to use an import directly, Vite is able to handle that import correctly in the consuming app.
+

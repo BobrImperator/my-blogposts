@@ -6,4 +6,5 @@
 - [Application API reference](https://api.emberjs.com/ember/release/classes/application)
 - [Ember guides](https://guides.emberjs.com/release/configuring-ember/embedding-applications)
 - [Webpack require-amd](https://webpack.js.org/api/module-methods/#require-amd-version)
+- [Tiny RPG Characters assets used](https://zerie.itch.io/tiny-rpg-character-asset-pack)
 - Presentation made in [Reveal.js](https://revealjs.com) and [auto-reveal](https://github.com/mainmatter/auto-reveal)

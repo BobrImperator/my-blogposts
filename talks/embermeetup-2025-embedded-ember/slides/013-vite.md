@@ -1,4 +1,6 @@
-// <!-- @EMBERMEETUP2025  -->
+# We're on Vite
+
+```js x-small-font [4-9]
 // app/config/environment.js
 import { assert } from '@ember/debug';
 
@@ -31,3 +33,9 @@ assert(
 );
 
 export default config;
+```
+
+Note:
+
+Normally Ember app's config is loaded from a `<meta>` tag embedded in `html`.
+In a library that's not going to work, but also in Vite apps, the `environment.js` is not a special module anymore. In this case it's going to be hardcoded but it could reference build time variables instead.

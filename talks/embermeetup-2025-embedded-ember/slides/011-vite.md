@@ -28,3 +28,5 @@ Note:
 
 No more compromises! We're a library now so it can be installed and initialized. How it's loaded, when and initialized is up to the users now!
 
+Let's have a look at how it's built first and then talk about problems.
+

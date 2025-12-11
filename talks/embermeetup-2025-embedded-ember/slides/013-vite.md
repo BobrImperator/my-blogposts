@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```js x-small-font [4-9]
 // app/config/environment.js
 import { assert } from '@ember/debug';

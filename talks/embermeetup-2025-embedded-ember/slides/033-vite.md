@@ -1,5 +1,3 @@
-# Optimizing size
-
 ```bash [3-4, 8]
 # Ember library
 embedded-dist/@embroider/virtual/vendor.js        0.32 kB

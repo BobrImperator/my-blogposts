@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```js x-small-font [1-2, 4]
 // embedded.js
 import App from './app/app';

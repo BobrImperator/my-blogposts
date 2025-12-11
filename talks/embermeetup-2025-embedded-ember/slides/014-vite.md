@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```js x-small-font [17-33]
 // vite.config.mjs
 import { defineConfig } from 'vite';

@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```diff x-small-font
 // node_modules/ember-welcome-page/dist/components/ember-welcome-page.js
 import { setComponentTemplate } from '@ember/component';

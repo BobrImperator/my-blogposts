@@ -1,5 +1,3 @@
-# Webpack
-
 ```js x-small-font
 // app.js
 

@@ -1,5 +1,3 @@
-# Webpack
-
 ```html
 <script src="https://ember-todo-test.onrender.com/bundle.js"></script>
 

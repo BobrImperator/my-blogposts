@@ -1,4 +1,4 @@
-# We're on Vite
+# Assets
 
 <img src="/snapshot/fresh_welcome_page_in_ember.png" />
 

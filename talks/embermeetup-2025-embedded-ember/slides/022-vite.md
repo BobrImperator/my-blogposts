@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```diff
 -  "ember-welcome-page": "^7.0.2",
 +  "ember-welcome-page": "^8.0.4",

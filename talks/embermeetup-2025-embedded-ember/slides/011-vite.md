@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```js [2, 9-14, 18]
 
 import EmbeddedEmber from "embermeetup2025-ember-impl/embedded";

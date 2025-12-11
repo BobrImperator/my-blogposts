@@ -1,5 +1,3 @@
-# We're on Vite
-
 ```json [5]
   "exports": {
     "./tests/*": "./tests/*",

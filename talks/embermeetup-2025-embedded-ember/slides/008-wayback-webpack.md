@@ -1,5 +1,3 @@
-# Webpack
-
 ```js [15]
 // app.js
 // Register the `MyEmbeddedApp` to the global object.

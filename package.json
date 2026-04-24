@@ -7,7 +7,10 @@
     "test:memory-leak": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:memory-leak; wait $pid",
     "test:memory-leak-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:memory-leak --server; wait $pid",
     "test:users": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users; wait $pid",
-    "test:users-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users --server; wait $pid"
+    "test:users-server": "pnpm -F emberfest-2024-memory-leaks-app start:memory-leak-detector & pid=$!; pnpm -F emberfest-2024-memory-leaks-app test:users --server; wait $pid",
+    "em25-impl": "pnpm -F embermeetup2025-ember-impl",
+    "em25-use": "pnpm -F embermeetup2025-embedded-usage",
+    "em25-talk": "pnpm -F embermeetup2025-embedded-ember"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +24,9 @@
       "intersection-observer-admin": "0.3.2"
     },
     "patchedDependencies": {
-      "auto-reveal": "patches/auto-reveal.patch"
+      "auto-reveal": "patches/auto-reveal.patch",
+      "@embroider/vite": "patches/@embroider__vite.patch",
+      "@laynezh/vite-plugin-lib-assets": "patches/@laynezh__vite-plugin-lib-assets.patch"
     }
   }
 }

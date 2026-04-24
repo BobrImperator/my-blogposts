@@ -1,0 +1,2 @@
+# Embed Ember apps anywhere!
+

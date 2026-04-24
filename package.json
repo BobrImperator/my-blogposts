@@ -25,8 +25,7 @@
     },
     "patchedDependencies": {
       "auto-reveal": "patches/auto-reveal.patch",
-      "@embroider/vite": "patches/@embroider__vite.patch",
-      "@laynezh/vite-plugin-lib-assets": "patches/@laynezh__vite-plugin-lib-assets.patch"
+      "@embroider/vite": "patches/@embroider__vite.patch"
     }
   }
 }

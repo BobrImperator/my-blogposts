@@ -3,6 +3,7 @@
 /declarations/
 /tmp/
 /embedded-dist/
+/embedded-dist-no-lib-assets/
 
 # dependencies
 /node_modules/
